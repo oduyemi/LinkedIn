@@ -10,7 +10,7 @@ import oreoluwa from "../assets/images/oreoluwa.jpg";
 
 export const RightContent = () => {
   return (
-    <Box id="right-aside" p={4}>
+    <Box id="right-aside rightside" p={2}>
       <Box id="rec-section" mb={4}>
         <Flex justify="space-between" align="center">
           <Text fontWeight="bold">Add to your feed</Text>

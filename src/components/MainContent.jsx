@@ -8,15 +8,15 @@ import github from "../assets/images/github.png";
 export const MainContent = () => {
     return (
         <ChakraProvider>
-            <Box id="main-wrapper" p={4}>
+            <Box id="main-wrapper maincontent" p={4}>
                 <Box id="main-section">
                     <Box id="share-box" mb={4}>
                         <Flex id="button-box" mb={2} justify="center">
                             <Button 
                                 id="btn-post" 
                                 leftIcon={<span className="fas fa-edit" />} 
-                                width="full" // Makes the button take full width of its container
-                                maxW="600px" // Set a max width to control the button's length
+                                width="full" 
+                                maxW="700px" 
                             >
                                 Start a post
                             </Button>

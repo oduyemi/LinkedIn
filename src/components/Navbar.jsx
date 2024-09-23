@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Input, IconButton, Stack } from "@chakra-ui/react";
+import { Box, Flex, Input, IconButton, Stack, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaHome, FaUserFriends, FaSuitcase, FaEnvelope, FaBell, FaTh, FaSearch } from "react-icons/fa";
 
@@ -7,18 +7,19 @@ export const Navbar = () => {
     return (
         <header id="main-header">
             <Box>
-                <Flex align="center" justify="space-between" p={4}>
-                    <Box>
+                <Flex align="center" justify="space-between" p={4} bg="#fefefe">
+                    <Box display="flex" alignItems="center">
                         <img
                             id="header-logo"
                             src={require("../assets/images/linkedin.png")}
                             alt="LinkedIn"
-                            width="80%"
+                            width="80"
                         />
                         <img
                             id="header-picture-menu"
                             src={require("../assets/images/dp.jpg")}
                             alt="Profile"
+                            style={{ marginLeft: '10px', borderRadius: '50%' }}
                         />
                         <IconButton
                             icon={<FaSearch />}
@@ -27,53 +28,39 @@ export const Navbar = () => {
                             display={{ base: "block", md: "none" }}
                         />
                     </Box>
-                    <Box>
+                    <Box flex="1" mx={4}>
                         <Input
                             id="search"
                             placeholder="Search"
                             aria-label="Search"
                             variant="filled"
+                            size="md"
                         />
                         <IconButton
                             icon={<FaSearch />}
                             aria-label="Search"
+                            variant="outline"
+                            ml={2}
                         />
                     </Box>
                 </Flex>
                 <nav>
-                    <Stack spacing={4}>
-                        <Flex as={Link} to="/" align="center">
-                            <FaHome />
-                            <span>Home</span>
-                        </Flex>
-                        <Flex as={Link} to="/network" align="center">
-                            <FaUserFriends />
-                            <span>My Network</span>
-                        </Flex>
-                        <Flex as={Link} to="/jobs" align="center">
-                            <FaSuitcase />
-                            <span>Jobs</span>
-                        </Flex>
-                        <Flex as={Link} to="/messaging" align="center">
-                            <FaEnvelope />
-                            <span>Messaging</span>
-                        </Flex>
-                        <Flex as={Link} to="/notifications" align="center">
-                            <FaBell />
-                            <span>Notifications</span>
-                        </Flex>
-                        <Flex align="center">
-                            <img
-                                src={require("../assets/images/dp.jpg")}
-                                alt="Profile"
-                            />
-                            <span>Me</span>
-                        </Flex>
-                        <Flex align="center">
-                            <FaTh />
-                            <span>Work</span>
-                        </Flex>
-                        <Box id="premium">
+                    <Stack spacing={4} p={4}>
+                        {[
+                            { to: "/", icon: <FaHome />, label: "Home" },
+                            { to: "", icon: <FaUserFriends />, label: "My Network" },
+                            { to: "", icon: <FaSuitcase />, label: "Jobs" },
+                            { to: "", icon: <FaEnvelope />, label: "Messaging" },
+                            { to: "", icon: <FaBell />, label: "Notifications" },
+                            { to: "", icon: <img src={require("../assets/images/dp.jpg")} alt="Profile" style={{ borderRadius: '50%', height: '24px', width: '24px' }} />, label: "Me" },
+                            { to: "", icon: <FaTh />, label: "Work" }
+                        ].map((item) => (
+                            <Flex key={item.label} as={Link} to={item.to} align="center" _hover={{ color: "blue.500" }} p={2}>
+                                {item.icon}
+                                <Text ml={2}>{item.label}</Text>
+                            </Flex>
+                        ))}
+                        <Box id="premium" p={2}>
                             <Link to="#">Try Premium Free for 1 Month</Link>
                         </Box>
                     </Stack>

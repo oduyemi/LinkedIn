@@ -12,7 +12,7 @@ export const Sidebar = () => {
   const toggleHashtags = () => setIsHashtagsOpen(!isHashtagsOpen);
 
   return (
-    <Box id="left-aside-wrapper">
+    <Box id="left-aside-wrapper sidebar">
       <aside id="left-aside">
         <Box id="profile-card" p={4} borderWidth={1} borderRadius="md">
           <Box id="background" height="100px" bg="gray.200" borderRadius="md" />
@@ -72,7 +72,7 @@ export const Sidebar = () => {
 
           <Section title="Followed Hashtags" isOpen={isHashtagsOpen} onToggle={toggleHashtags}>
             <ul>
-              <li><FaHashtag /><span>javascript</span></li>
+              <li><FaHashtag className="inline"/><span className="inline" tyle={{ marginLeft: '8px' }}>javascript</span></li>
               <li><FaHashtag /><span>webdevelopment</span></li>
             </ul>
             <Link to="#">See all</Link>

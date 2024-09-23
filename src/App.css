@@ -29,7 +29,9 @@ a {
 header#main-header {
     height: 52px;
     position: fixed;
-    /* background: #283c4a; */
+    top: 0;
+    background: #fff;
+    color: #000;
     width: 100vw;
     display: flex;
     justify-content: center;
@@ -1221,6 +1223,10 @@ aside#right-aside div#linkedin-section footer ul li span {
 aside#right-aside div#linkedin-section footer > div {
     text-align: center;
     font-size: 14px;
+}
+.sidebar, .rightside, .maincontent{
+  position:relative;
+  top:auto !important;
 }
 
 aside#right-aside div#linkedin-section footer > div > strong span {

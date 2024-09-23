@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Flex, Image, Button, Input, Link as ChakraLink } from "@chakra-ui/react";
+import { Text, Flex, Image, Button, Input, Link as ChakraLink } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaHome, FaSearch } from "react-icons/fa";
 import notFound from "../assets/images/notfound.png"; 

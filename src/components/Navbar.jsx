@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Input, Stack, Text, Image, IconButton } from "@chakra-ui/react";
+import { Box, Flex, Input, Stack, Text, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaHome, FaUserFriends, FaSuitcase, FaEnvelope, FaBell, FaTh, FaSearch } from "react-icons/fa";
 
@@ -33,7 +33,7 @@ export const Navbar = () => {
                     </Flex>
                 </Box>
 
-                {/* Navigation Icons */}
+                {/* Nav Icons */}
                 <Box>
                     <Stack direction="row" spacing={8} align="center">
                         <Link to="/" className="active-link">
@@ -87,8 +87,6 @@ export const Navbar = () => {
                         </Link>
                     </Stack>
                 </Box>
-
-                {/* Premium and other links */}
                 <Box>
                     <Link to="#" _hover={{ color: "blue.500" }} fontWeight="bold">
                         Try Premium Free for 1 Month

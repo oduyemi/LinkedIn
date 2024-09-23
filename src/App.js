@@ -1,6 +1,6 @@
 import './App.css';
 import { Navigation } from './navigation';
-import { ChakraProvider, Box, Image, Flex } from '@chakra-ui/react';
+import { ChakraProvider, Box, Image } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 
 function App() {

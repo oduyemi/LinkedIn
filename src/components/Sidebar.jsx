@@ -26,19 +26,19 @@ export const Sidebar = () => {
               borderColor="white"
             />
             <VStack align="start" ml={4}>
-              <Text fontWeight="bold" id="profile-name">Maurício Mendes Rossi</Text>
-              <Text fontSize="sm">Front-End Developer</Text>
+              <Text fontWeight="bold" id="profile-name">Opeyemi Oduyemi</Text>
+              <Text fontSize="sm">Fullstack Developer</Text>
             </VStack>
           </Flex>
           <Box id="profile-links" mt={4}>
             <Link to="#">
               <Text>
-                Who's viewed your profile <span className="profile-number">102</span>
+                Who's viewed your profile <span className="profile-number">86</span>
               </Text>
             </Link>
             <Link to="#">
               <Text>
-                Connections <span className="profile-number">452</span>
+                Connections <span className="profile-number">2k</span>
               </Text>
             </Link>
           </Box>

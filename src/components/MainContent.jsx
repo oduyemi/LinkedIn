@@ -8,7 +8,7 @@ import github from "../assets/images/github.png";
 export const MainContent = () => {
     return (
         <ChakraProvider>
-            <Box id="main-wrapper" p={4}>
+            <Box id="main-wrapper" p={6}>
                 <Box id="main-section">
                     <Box id="share-box" mb={4}>
                         <Flex id="button-box" mb={2}>

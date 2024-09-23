@@ -1,71 +1,100 @@
 import React from "react";
-import { Box, Flex, Input, IconButton, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Input, Stack, Text, Image, IconButton } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaHome, FaUserFriends, FaSuitcase, FaEnvelope, FaBell, FaTh, FaSearch } from "react-icons/fa";
 
 export const Navbar = () => {
     return (
-        <header id="main-header">
-            <Box>
-                <Flex align="center" justify="space-between" p={4} bg="#fefefe">
-                    <Box display="flex" alignItems="center">
-                        <img
-                            id="header-logo"
-                            src={require("../assets/images/linkedin.png")}
-                            alt="LinkedIn"
-                            width="80"
-                        />
-                        <img
-                            id="header-picture-menu"
-                            src={require("../assets/images/dp.jpg")}
-                            alt="Profile"
-                            style={{ marginLeft: '10px', borderRadius: '50%' }}
-                        />
-                        <IconButton
-                            icon={<FaSearch />}
-                            variant="ghost"
-                            aria-label="Toggle menu"
-                            display={{ base: "block", md: "none" }}
-                        />
-                    </Box>
-                    <Box flex="1" mx={4}>
+        <nav>
+            <Flex justify="space-between" align="center" p={4} bg="#ffffff" borderBottom="1px solid #e6e6e6">
+                
+                {/* Logo and Search */}
+                <Box display="flex" alignItems="center">
+                    <Link to="/">
+                        <Image src={require("../assets/images/linkedin.png")} boxSize="40px" alt="LinkedIn Logo" ml={32} /> 
+                    </Link>
+                    <Flex
+                        align="center"
+                        ml={10}
+                        bg="gray.100"
+                        borderRadius="full"
+                        p={2}
+                        boxShadow="sm"
+                        w="300px"
+                    >
+                        <FaSearch color="gray" />
                         <Input
-                            id="search"
                             placeholder="Search"
-                            aria-label="Search"
-                            variant="filled"
-                            size="md"
-                        />
-                        <IconButton
-                            icon={<FaSearch />}
-                            aria-label="Search"
-                            variant="outline"
+                            variant="unstyled"
                             ml={2}
+                            fontSize="14px"
+                            _placeholder={{ color: "gray.500" }}
                         />
-                    </Box>
-                </Flex>
-                <nav>
-                    <Stack spacing={4} p={4}>
-                        {[
-                            { to: "/", icon: <FaHome />, label: "Home" },
-                            { to: "", icon: <FaUserFriends />, label: "My Network" },
-                            { to: "", icon: <FaSuitcase />, label: "Jobs" },
-                            { to: "", icon: <FaEnvelope />, label: "Messaging" },
-                            { to: "", icon: <FaBell />, label: "Notifications" },
-                            { to: "", icon: <img src={require("../assets/images/dp.jpg")} alt="Profile" style={{ borderRadius: '50%', height: '24px', width: '24px' }} />, label: "Me" },
-                            { to: "", icon: <FaTh />, label: "Work" }
-                        ].map((item) => (
-                            <Flex key={item.label} as={Link} to={item.to} align="center" _hover={{ color: "blue.500" }} p={2}>
-                                {item.icon}
-                                <Text ml={2}>{item.label}</Text>
+                    </Flex>
+                </Box>
+
+                {/* Navigation Icons */}
+                <Box>
+                    <Stack direction="row" spacing={8} align="center">
+                        <Link to="/" className="active-link">
+                            <Box textAlign="center" _hover={{ color: "blue.500" }}>
+                                <FaHome size={20} />
+                                <Text fontSize="12px" mt={1}>Home</Text>
+                            </Box>
+                        </Link>
+
+                        <Link to="/network">
+                            <Box textAlign="center" _hover={{ color: "blue.500" }}>
+                                <FaUserFriends size={20} />
+                                <Text fontSize="12px" mt={1}>My Network</Text>
+                            </Box>
+                        </Link>
+
+                        <Link to="/jobs">
+                            <Box textAlign="center" _hover={{ color: "blue.500" }}>
+                                <FaSuitcase size={20} />
+                                <Text fontSize="12px" mt={1}>Jobs</Text>
+                            </Box>
+                        </Link>
+
+                        <Link to="/messaging">
+                            <Box textAlign="center" _hover={{ color: "blue.500" }}>
+                                <FaEnvelope size={20} />
+                                <Text fontSize="12px" mt={1}>Messaging</Text>
+                            </Box>
+                        </Link>
+
+                        <Link to="/notifications">
+                            <Box textAlign="center" _hover={{ color: "blue.500" }}>
+                                <FaBell size={20} />
+                                <Text fontSize="12px" mt={1}>Notifications</Text>
+                            </Box>
+                        </Link>
+
+                        {/* Profile & Work */}
+                        <Link to="#">
+                            <Flex direction="column" align="center" _hover={{ color: "blue.500" }}>
+                                <Image src={require("../assets/images/dp.jpg")} alt="Profile" borderRadius="full" boxSize="24px" />
+                                <Text fontSize="12px" mt={1}>Me</Text>
                             </Flex>
-                        ))}
-                        <Box id="premium" p={2}>
-                            <Link to="#">Try Premium Free for 1 Month</Link>
-                        </Box>
+                        </Link>
+
+                        <Link to="#">
+                            <Flex direction="column" align="center" _hover={{ color: "blue.500" }}>
+                                <FaTh size={20} />
+                                <Text fontSize="12px" mt={1}>Work</Text>
+                            </Flex>
+                        </Link>
                     </Stack>
-                </nav>
-            </Box>
-        </header>
+                </Box>
+
+                {/* Premium and other links */}
+                <Box>
+                    <Link to="#" _hover={{ color: "blue.500" }} fontWeight="bold">
+                        Try Premium Free for 1 Month
+                    </Link>
+                </Box>
+            </Flex>
+        </nav>
     );
 };

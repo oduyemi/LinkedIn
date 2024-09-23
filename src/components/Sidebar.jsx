@@ -18,7 +18,7 @@ export const Sidebar = () => {
           <Box id="background" height="100px" bg="gray.200" borderRadius="md" />
           <Flex id="profile-info" align="center" mt={-16}>
             <Image
-              src="/images/picture.jpeg"
+              src={require("../assets/images/dp.jpg")}
               alt="Profile picture"
               borderRadius="full"
               boxSize="100px"

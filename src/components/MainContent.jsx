@@ -8,18 +8,20 @@ import github from "../assets/images/github.png";
 export const MainContent = () => {
     return (
         <ChakraProvider>
-            <Box id="main-wrapper" p={6}>
+            <Box id="main-wrapper" p={4}>
                 <Box id="main-section">
                     <Box id="share-box" mb={4}>
-                        <Flex id="button-box" mb={2}>
-                            <Button id="btn-post" leftIcon={<span className="fas fa-edit" />}>
+                        <Flex id="button-box" mb={2} justify="center">
+                            <Button 
+                                id="btn-post" 
+                                leftIcon={<span className="fas fa-edit" />} 
+                                width="full" // Makes the button take full width of its container
+                                maxW="600px" // Set a max width to control the button's length
+                            >
                                 Start a post
                             </Button>
-                            <Button id="btn-picture" leftIcon={<span className="fas fa-camera" />} />
-                            <Button id="btn-video" leftIcon={<span className="fas fa-video" />} />
-                            <Button id="btn-document" leftIcon={<span className="fas fa-file" />} />
                         </Flex>
-                        <Flex id="link-box">
+                        <Flex id="link-box" justify="center">
                             <ChakraLink to="#">Write an article</ChakraLink>
                             <Text ml={1}>on LinkedIn</Text>
                         </Flex>
@@ -36,7 +38,7 @@ export const MainContent = () => {
                         author: "Ini Ebong",
                         role: "Product Manager at FreePoint",
                         time: "12h",
-                        content: "Yesterday I had a conversation with Opeyemi Oduyemi, Fullstack Developer, and found out that he cloned LinkedIn layout using HTML/CSS. I think you should check this out ;)",
+                        content: "Yesterday I had a conversation with Opeyemi Oduyemu, Fullstack Developer, and found out that he cloned LinkedIn layout using HTML/CSS. I think you should check this out ;)",
                         imgSrc: ini,
                         postImg: convo,
                         likes: 46,

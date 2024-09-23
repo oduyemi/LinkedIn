@@ -29,7 +29,7 @@ a {
 header#main-header {
     height: 52px;
     position: fixed;
-    background: #283c4a;
+    /* background: #283c4a; */
     width: 100vw;
     display: flex;
     justify-content: center;

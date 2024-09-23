@@ -2,6 +2,11 @@ import React from "react";
 import { Box, Flex, Image, Text, Button, Link as ChakraLink } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { FaPlus, FaInfoCircle } from "react-icons/fa";
+import linkorg from "../assets/images/linkorg.png";
+import mtn from "../assets/images/mtn.png";
+import oreoluwa from "../assets/images/oreoluwa.jpg";
+
+
 
 export const RightContent = () => {
   return (
@@ -12,7 +17,7 @@ export const RightContent = () => {
           <Flex align="center">
             <FaInfoCircle />
             <Box
-              display="none" // Update to show on hover
+              display="none" 
               position="absolute"
               bg="white"
               borderWidth={1}
@@ -30,18 +35,18 @@ export const RightContent = () => {
         <Box mt={2}>
           {[
             {
-              imgSrc: "/images/mongo.jpeg",
-              title: "MongoDB",
-              subtitle: "Company - Computer Software",
+              imgSrc: linkorg,
+              title: "LinkOrg Networks",
+              subtitle: "Company - IT & Networks",
             },
             {
-              imgSrc: "/images/react.png",
-              title: "#reactjs",
+              imgSrc: mtn,
+              title: "MTN",
               subtitle: null,
             },
             {
-              imgSrc: "/images/example-person.jpeg",
-              title: "John Smith",
+              imgSrc: oreoluwa,
+              title: "Oreoluwa Smith",
               subtitle: "Entrepreneur and Marketing Specialist",
             },
           ].map(({ imgSrc, title, subtitle }, index) => (
@@ -63,11 +68,11 @@ export const RightContent = () => {
         <Text fontSize="sm">Ad</Text>
         <ChakraLink as={Link} to="#">
           <Text>
-            Maurício, unlock your full potential with Linkedin Premium
+            Opeyemi, unlock your full potential with Linkedin Premium
           </Text>
           <Flex align="center" mt={2}>
-            <Image src="/images/picture.jpeg" alt="Profile picture" boxSize="40px" borderRadius="full" />
-            <Image src="/images/linkedin-ad.png" alt="LinkedIn Premium Ad" boxSize="100px" ml={2} />
+            <Image src={require("../assets/images/dp.jpg")} alt="Profile picture" boxSize="40px" borderRadius="full" />
+            <Image src={require("../assets/images/ads.png")}  alt="LinkedIn Premium Ad" boxSize="140px" ml={2} />
           </Flex>
           <Text fontWeight="bold" mt={2}>
             See who's viewed your profile in the last 90 days

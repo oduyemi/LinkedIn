@@ -1,4 +1,4 @@
-# LinkedIn Clone Documentation
+# LinkedIn
 
 ## Overview
 This project is a clone of the LinkedIn platform, featuring a user interface that mimics LinkedIn's layout and design. The clone includes essential functionalities like a navbar, sidebar, main content feed, right sidebar, and footer. The application is built using React and Chakra UI.
